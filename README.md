@@ -1,159 +1,172 @@
-# 🎵 VibeFlow
+# 🚀 VibeFlow IDE & Transpiler
 
-A modern and responsive music streaming web application designed to deliver a seamless and immersive listening experience. **VibeFlow** features a clean user interface, smooth animations, intuitive navigation, and responsive layouts, making it an excellent showcase of modern frontend development practices.
-
-![GitHub stars](https://img.shields.io/github/stars/jawadurrehman48/VibeFlow?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/jawadurrehman48/VibeFlow?style=for-the-badge)
-![GitHub license](https://img.shields.io/github/license/jawadurrehman48/VibeFlow?style=for-the-badge)
+> **A custom programming language, compiler, and integrated development environment (IDE) built from scratch using C# and .NET Windows Forms. VibeFlow demonstrates the complete compiler pipeline by translating VibeScript programs into executable Python code while visualizing every stage of compilation.**
 
 ---
 
-## 🚀 Features
+## 🌟 Highlights
 
-- 🎧 Modern and elegant music player UI
-- 📱 Fully responsive design for all devices
-- 🎵 Playlist browsing and music discovery
-- ⏯️ Play, pause, next, and previous controls
-- 🔊 Volume control
-- 🎨 Beautiful animations and transitions
-- ⚡ Fast and optimized performance
-- 🌙 Clean and user-friendly interface
+✨ Custom Programming Language (VibeScript)
 
----
+⚙️ Complete 6-Phase Compiler
 
-## 🛠️ Tech Stack
+🌳 Abstract Syntax Tree (AST)
 
-### Frontend
-- HTML5
-- CSS3
-- JavaScript (ES6+)
+📑 Symbol Table Generation
 
-### Tools
-- Git
-- GitHub
-- VS Code
+🧠 Semantic Analysis
+
+🔄 Three Address Code (3AC)
+
+🐍 Python Code Generation
+
+🖥 Interactive Desktop IDE
+
+📖 Built-in Language Documentation
 
 ---
 
-## 📂 Project Structure
+## 📸 Preview
 
-```
-VibeFlow/
-│
-├── assets/
-│   ├── images/
-│   ├── icons/
-│   └── music/
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-├── index.html
-└── README.md
-```
+### Workspace
+
+![Workspace](screenshots/workspace.png)
+
+### Compiler Pipeline
+
+![Pipeline](screenshots/compiler-pipeline.png)
+
+### Language Documentation
+
+![Docs](screenshots/vibescript-docs.png)
 
 ---
 
-## ⚙️ Installation
+## 🎯 About the Project
 
-Clone the repository
+VibeFlow is a compiler construction project designed to demonstrate the internal working of modern compilers through an easy-to-use graphical interface.
 
-```bash
-git clone https://github.com/jawadurrehman48/VibeFlow.git
-```
+Instead of simply translating source code, VibeFlow allows users to visualize every stage of compilation—from token generation and syntax analysis to semantic checking, abstract syntax tree creation, intermediate code generation, and Python transpilation.
 
-Go into the project directory
-
-```bash
-cd VibeFlow
-```
-
-Open the project
-
-```bash
-Open index.html in your browser
-```
-
-Or use VS Code Live Server.
+The project introduces **VibeScript**, a lightweight programming language featuring custom syntax for variables, conditional statements, loops, and console output.
 
 ---
 
-## 📸 Screenshots
+## 🔄 Compilation Workflow
 
-> Add screenshots here after uploading them.
-
-```markdown
-![Home](screenshots/home.png)
-
-![Player](screenshots/player.png)
+```
+VibeScript Source Code
+          │
+          ▼
+ Lexical Analysis
+          │
+          ▼
+ Syntax Analysis
+          │
+          ▼
+ Semantic Analysis
+          │
+          ▼
+ Abstract Syntax Tree
+          │
+          ▼
+ Three Address Code
+          │
+          ▼
+ Python Code Generation
 ```
 
 ---
 
-## 🎯 Future Improvements
+## 💻 Example
 
-- User Authentication
-- Favorite Songs
-- Search Functionality
-- Dark / Light Mode
-- Shuffle & Repeat
-- Lyrics Integration
-- Backend Integration
-- Music Recommendations
+### VibeScript
+
+```vb
+set count = 5;
+
+check (count > 0) {
+    show("Math works!");
+}
+```
+
+### Generated Python
+
+```python
+count = 5
+
+if count > 0:
+    print("Math works!")
+```
 
 ---
 
-## 🤝 Contributing
+## 🔑 VibeScript Keywords
 
-Contributions are welcome!
-
-1. Fork the repository
-2. Create your feature branch
-
-```bash
-git checkout -b feature/AmazingFeature
-```
-
-3. Commit your changes
-
-```bash
-git commit -m "Add AmazingFeature"
-```
-
-4. Push to the branch
-
-```bash
-git push origin feature/AmazingFeature
-```
-
-5. Open a Pull Request
+| Keyword | Purpose |
+|----------|---------|
+| `set` | Declare Variables |
+| `check` | Conditional Statement |
+| `otherwise` | Else Block |
+| `loop` | Loop Execution |
+| `show` | Console Output |
 
 ---
 
-## 👨‍💻 Author
+## 🛠 Built With
+
+- C#
+- .NET Windows Forms
+- Compiler Construction
+- Recursive Descent Parser
+- AST Generation
+- Three Address Code (3AC)
+- Python Code Generator
+
+---
+
+## 🧩 Core Components
+
+- ✔ Lexer
+- ✔ Parser
+- ✔ Semantic Analyzer
+- ✔ Symbol Table
+- ✔ AST Builder
+- ✔ Intermediate Code Generator
+- ✔ Python Transpiler
+- ✔ Desktop IDE
+
+---
+
+## 🚀 Future Roadmap
+
+- Functions
+- Arrays
+- User-defined Classes
+- Compiler Optimizations
+- Error Recovery
+- Syntax Highlighting
+- Auto Complete
+- Built-in Debugger
+- Execute Python from IDE
+
+---
+
+## 👨‍💻 Developer
 
 **Jawad Ur Rehman**
 
-- GitHub: https://github.com/jawadurrehman48
-- LinkedIn: *(Add your LinkedIn profile here)*
+Computer Science Student • Software Developer • UI/UX Designer
+
+GitHub:
+https://github.com/jawadurrehman48
 
 ---
 
-## ⭐ Support
+## ⭐ If you like this project...
 
-If you like this project, consider giving it a ⭐ on GitHub!
+Leave a ⭐ on the repository!
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-Feel free to use, modify, and distribute this project.
+It helps support future development and motivates me to build more compiler and programming language projects.
 
 ---
-
-### Made with ❤️ by Jawad Ur Rehman

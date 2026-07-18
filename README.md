@@ -30,15 +30,15 @@
 
 ### Workspace
 
-![Workspace](screenshots/workspace.png)
+![Workspace](screenshots/A.png)
 
 ### Compiler Pipeline
 
-![Pipeline](screenshots/compiler-pipeline.png)
+![Pipeline](screenshots/B.png)
 
 ### Language Documentation
 
-![Docs](screenshots/vibescript-docs.png)
+![Docs](screenshots/C.png)
 
 ---
 

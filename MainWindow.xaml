@@ -1,0 +1,135 @@
+﻿<Window x:Class="VibeFlow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VibeFlow IDE &amp; Transpiler - Enterprise Edition" Height="800" Width="1200" Background="#1E1E1E" WindowStartupLocation="CenterScreen">
+
+    <TabControl Background="#1E1E1E" BorderThickness="0" Foreground="White" FontSize="16">
+
+        <TabItem Header="💻 Workspace" Padding="15,8">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Background="#252526" CornerRadius="8" Margin="0,0,10,0" Padding="15">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="VibeScript Editor" Foreground="#4EC9B0" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBox x:Name="CodeEditor" Grid.Row="1" Background="#1E1E1E" Foreground="#D4D4D4" 
+                                 FontFamily="Consolas" FontSize="16" AcceptsReturn="True" AcceptsTab="True" 
+                                 BorderThickness="0" TextWrapping="NoWrap"
+                                 Text="set count = 5;&#x0a;check (count > 0) {&#x0a;    show(&quot;Math works!&quot;);&#x0a;}"/>
+                        <Button x:Name="CompileBtn" Grid.Row="2" Content="▶ Compile Pipeline" 
+                                Background="#007ACC" Foreground="White" FontSize="16" FontWeight="Bold" Height="45" 
+                                Margin="0,15,0,0" Click="CompileBtn_Click" Cursor="Hand"/>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="5*" />
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="#252526" CornerRadius="8" Margin="0,0,0,10" Padding="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Vibe-Tree (Abstract Syntax Tree)" Foreground="#DCDCAA" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                            <TreeView x:Name="ASTTreeView" Grid.Row="1" Background="#1E1E1E" Foreground="White" BorderThickness="0"/>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Row="1" Background="#252526" CornerRadius="8" Padding="15">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Phase 6: Final Python Target Code" Foreground="#CE9178" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                            <TextBox x:Name="ConsoleOutput" Grid.Row="1" Background="#1E1E1E" Foreground="#4EC9B0" 
+                                     FontFamily="Consolas" FontSize="15" AcceptsReturn="True" IsReadOnly="True" 
+                                     BorderThickness="0" TextWrapping="Wrap"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="⚙️ Pipeline Inspector (Memory)" Padding="15,8">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2.8*"/>
+                    <ColumnDefinition Width="4.2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Background="#252526" CornerRadius="8" Margin="0,0,10,0" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Phase 1: Token Stream" Foreground="#9CDCFE" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <ListBox x:Name="TokenListBox" Background="#1E1E1E" Foreground="#D4D4D4" FontFamily="Consolas" BorderThickness="0" Height="650"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Background="#252526" CornerRadius="8" Margin="0,0,10,0" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Phase 3: Symbol Table" Foreground="#C586C0" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <ListBox x:Name="SymbolListBox" Background="#1E1E1E" Foreground="#D4D4D4" FontFamily="Consolas" BorderThickness="0" Height="650"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2" Background="#252526" CornerRadius="8" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Phase 5: Intermediate Representation (3AC)" Foreground="#D7BA7D" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBox x:Name="IROutput" Background="#1E1E1E" Foreground="#D4D4D4" FontFamily="Consolas" FontSize="15" 
+                                 AcceptsReturn="True" IsReadOnly="True" BorderThickness="0" Height="650"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </TabItem>
+
+        <TabItem Header="📚 VibeScript Docs" Padding="15,8">
+            <Border Background="#252526" CornerRadius="8" Margin="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="VibeScript Language Specification" Foreground="#4EC9B0" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+                    <TextBlock Text="Reserved Keywords" Foreground="#569CD6" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="set" Foreground="#C586C0" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Declares a new variable in memory. (Equivalent to var/int/let)" Foreground="White" Margin="0,5"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="check" Foreground="#C586C0" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="Evaluates a boolean condition. (Equivalent to if)" Foreground="White" Margin="0,5"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="otherwise" Foreground="#C586C0" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="Fallback logic for a failed check. (Equivalent to else)" Foreground="White" Margin="0,5"/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="loop" Foreground="#C586C0" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="Repeats a block of code while a condition is true. (Equivalent to while)" Foreground="White" Margin="0,5"/>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="show" Foreground="#C586C0" FontWeight="Bold" Margin="0,5"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Text="Outputs data to the console/stdout. (Equivalent to print)" Foreground="White" Margin="0,5"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </TabItem>
+    </TabControl>
+</Window>
